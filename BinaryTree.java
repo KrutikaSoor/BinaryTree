@@ -54,11 +54,19 @@ public class BinaryTree{
         }
     }
 
-
+    public void inOrder(TreeNode root){
+        if(root==null){
+            return;
+        }
+        inOrder(root.left);
+        System.out.println(root.data+" ");
+        inOrder(root.right);
+    }
     public static void main(String[] args){
         BinaryTree bt= new BinaryTree();
         bt.CreateBinaryTree();
         //bt.preOrderRecursive(bt.root);
-        bt.preOrderIterative();
+        //bt.preOrderIterative();
+        bt.inOrder(bt.root);
     }
 }
